@@ -2,8 +2,10 @@
   <body>
     <h1>New Message</h1>
     <form method="POST" action="/new">
-      User: <input type="text" name="user" /><br />
-      Message: <input type="text" name="message" /><br />
+      <label for="messageUser">User: </label>
+      <input type="text" name="messageUser" required /><br />
+      <label for="messageText"> Message:</label>
+      <input type="text" name="messageText" required /><br />
       <input type="submit" />
     </form>
   </body>

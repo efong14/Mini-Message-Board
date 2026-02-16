@@ -18,16 +18,27 @@ indexRouter.get('/', (req, res) => {
   res.render('displayMessage', { title: 'Mini Messageboard', messages: messages });
 });
 
-indexRouter.get('/new', (res, req) => {
+indexRouter.get('/new', (req, res) => {
   res.render('form');
 });
 
-indexRouter.post('/new', (res, req) => {
-  const messageUser = req.body.user;
-  const messageText = req.body.message;
-  messages.push({ messages: messageText, user: messageUser, added: new Date() });
+indexRouter.get('/message/:id', (req, res) => {
+  res.render('messageDetails', { messages: messages, id: req.params.id });
+});
+
+indexRouter.post('/new', (req, res) => {
+  const messageUser = req.body.messageUser;
+  const messageText = req.body.messageText;
+
+  messages.push({
+    text: messageText,
+    user: messageUser,
+    added: new Date(),
+  });
 
   res.redirect('/');
 });
+
+// Figure out how to link pages between each other in views
 
 module.exports = indexRouter;
