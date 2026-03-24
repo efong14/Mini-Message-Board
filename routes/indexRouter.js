@@ -39,6 +39,4 @@ indexRouter.post('/new', (req, res) => {
   res.redirect('/');
 });
 
-// Figure out how to link pages between each other in views
-
 module.exports = indexRouter;
