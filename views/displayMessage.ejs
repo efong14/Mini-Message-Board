@@ -1,14 +1,13 @@
 <html>
     <body>
         <h1> <%= title %></h1>
-        <% messages.forEach((message, index)=>{ %>
+        <% messages.forEach((message)=>{ %>
             <ul>
-            <li>Text: <%= message.text  %></li>
-            <li>User: <%= message.user  %></li>
-            <li>Date: <%= message.added  %></li>
-            <li><a href= '/message/<%= index %>'> View</a></li> 
+            <li>Text: <%= message.message  %></li>
+            <li>User: <%= message.username  %></li>
+            <li>Date: <%= message.date  %></li>
+            <li><a href= '/message/<%= message.id %>'> View</a></li> 
             </ul>
-
         <%})%>
         <a href="/new">New Message</a>
     </body>
